@@ -1,7 +1,7 @@
 ﻿using FineCore.Attributes;
 using System;
 
-namespace FineCore.M {
+namespace  FineCore.M {
     public abstract class BaseModel {
         [ColumnName("Id",true)]
         public int Id { get; set; } = 0;

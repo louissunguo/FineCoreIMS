@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace FineCore.Attributes {
+namespace  FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class StringValidatorAttribute : AttributeBase {
 

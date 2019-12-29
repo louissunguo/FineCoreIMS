@@ -2,7 +2,7 @@
 using FineCore.Attributes;
 using System.Threading;
 
-namespace FineCore.M.Shared {
+namespace  FineCore.M.Shared {
     [TableName("NameInf")]
     public class NameInf : BaseModel {
         private static string language = Thread.CurrentThread.CurrentCulture.Name;

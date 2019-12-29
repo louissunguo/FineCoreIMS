@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FineCore.M {
+namespace  FineCore.M {
     
     public abstract class NamedModel : BaseModel {
 

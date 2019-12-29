@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FineCore.Attributes {
+namespace  FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Field)]
     public class FieldAttribute : AttributeBase {
 

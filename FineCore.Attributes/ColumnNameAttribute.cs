@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FineCore.Attributes {
+namespace  FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class ColumnNameAttribute : AttributeBase {
 

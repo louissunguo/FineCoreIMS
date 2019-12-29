@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace FineCore.Attributes {
+namespace  FineCore.Attributes {
     public static class AttributeExtends {
         /// <summary>
         /// 特性校验

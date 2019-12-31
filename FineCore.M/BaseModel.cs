@@ -27,7 +27,7 @@ namespace FineCore.M {
                 return custAttribute.TableName;
             } else {
                 return null;
-                throw new ArgumentNullException("您给的实例不是数据表映射对象，所以，没有表名称。");
+                throw new ArgumentNullException("序号：BaseModel.00000004，您给的实例不是数据表映射对象，所以，没有表名称。");
             }
         }
 

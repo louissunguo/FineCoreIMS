@@ -1,0 +1,4 @@
+{
+  "dbProvider": "System.Data.SqlClient.dll",
+  "dbConnString": ""
+}

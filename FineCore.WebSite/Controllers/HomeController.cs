@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using FineCore.WebSite.Models;
+using Microsoft.Extensions.Logging;
 
 namespace FineCore.WebSite.Controllers {
     public class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
+        private readonly ILoggerFactory _loggerFactory;
 
-        public HomeController(ILogger<HomeController> logger) {
+        //public HomeController(ILogger<HomeController> logger) {
+        //    _logger = logger;
+        //}
+
+        public HomeController(ILogger<HomeController> logger, ILoggerFactory loggerFactory) {
             _logger = logger;
+            _loggerFactory = loggerFactory;
         }
 
         public IActionResult Index() {
             var dbProvider = FineCore.DB.DbSettings.GetDbProvider();
+            _logger.LogDebug("Hi, 这是Log4net日志。");
+            _logger.LogWarning("This is HomeController-Index");
+            _loggerFactory.CreateLogger<HomeController>().LogWarning("This is HomeController-Index 1");
             return View();
         }
 

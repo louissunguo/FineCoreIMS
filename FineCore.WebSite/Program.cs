@@ -15,6 +15,12 @@ namespace FineCore.WebSite {
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                //.ConfigureLogging(
+                //    (context, loggerBuilder) => {
+                //        loggerBuilder.AddFilter("System", LogLevel.Warning);
+                //        loggerBuilder.AddFilter("Microsoft", LogLevel.Warning);
+                //        loggerBuilder.AddLog4Net();
+                //    })
                 .ConfigureWebHostDefaults(webBuilder => {
                     webBuilder.UseStartup<Startup>();
                 });

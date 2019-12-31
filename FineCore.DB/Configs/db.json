@@ -1,6 +1,7 @@
 {
   "dbProvider": "SQLSERVER",
   "dbAssembly": "System.Data.SqlClient.dll",
+  "dbObjectHeadString": "System.Data.SqlClient.Sql",
   "dbConnWrite": "Data Source=.;Initial Catalog=MyDatabase;User Id=sa;Password=sg1028@ca;",
   //// MySQLConnectionString  Data Source=.;Database=MyDatabase;User ID=sa;Password=sg1028@ca;Command Logging=false;
   //// Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MyDatabase)));Persist Security Info=True;User ID=sa;Password=sg1028@ca;

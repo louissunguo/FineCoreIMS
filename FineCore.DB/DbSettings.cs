@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -13,6 +14,8 @@ namespace FineCore.DB {
     /// 数据库设置
     /// </summary>
     public static class DbSettings {
+        private static int seed = 0;
+        private static string[] connStringArrayForRead = GetReadConnStringArry();
 
         #region 配置文件
 
@@ -23,12 +26,12 @@ namespace FineCore.DB {
             get {
                 try {
                     var dir = Environment.CurrentDirectory + "\\Configs";
-                    if (Directory.Exists(dir)) 
+                    if (Directory.Exists(dir))
                         return dir;
-                    else 
+                    else
                         return System.Environment.CurrentDirectory;
                 } catch (Exception ex) {
-                    throw new Exception($"序号：FineCore.DB.DbSettings.00000001{ex.Message}");
+                    throw new Exception($"序号：FineCore.DB.DbSettings.00000001；{ex.Message}");
                 }
             }
         }
@@ -44,7 +47,7 @@ namespace FineCore.DB {
                 try {
                     return new StreamReader(configDir + "\\db.json");
                 } catch (Exception ex) {
-                    throw new Exception($"序号：FineCore.DB.DbSettings.00000002{ex.Message}");
+                    throw new Exception($"序号：FineCore.DB.DbSettings.00000002；{ex.Message}");
                 }
             }
         }
@@ -59,34 +62,159 @@ namespace FineCore.DB {
                     var jsonObj = JsonConvert.DeserializeObject<JObject>(content);
                     return jsonObj;
                 } catch (Exception ex) {
-                    throw new Exception($"序号：FineCore.DB.DbSettings.00000003{ex.Message}");
+                    throw new Exception($"序号：FineCore.DB.DbSettings.00000003；{ex.Message}");
                 }
             }
         }
 
         #endregion
 
+        #region 取系统配置信息
+
         /// <summary>
         /// 取Database驱动：GetDbProvider
         /// </summary>
-        public static string GetDbProvider(string settingKey="dbProvider") { 
-            var value = dbSettings.Value<string>(settingKey); 
-            return value;
+        public static string GetDbProvider(string settingKey = "dbProvider") {
+            return dbSettings.Value<string>(settingKey);
         }
+
+        public static string GetDbAssembly(string settingKey = "dbAssembly") {
+            return dbSettings.Value<string>(settingKey);
+        }
+
+        public static string GetDbObjectHeadString(string settingKey = "dbObjectHeadString") {
+            return dbSettings.Value<string>(settingKey);
+        }
+
 
         /// <summary>
         /// 取Database连接字符串（写数据）
         /// </summary>
         public static string GetWriteConnString(string settingKey = "dbConnWrite") {
-            var value = dbSettings.Value<string>(settingKey); return value;
+            return dbSettings.Value<string>(settingKey);
         }
 
         /// <summary>
         /// 取Database连接字符串（只读数据）
         /// </summary>
-        public static string[] GetReadConnStringArry(string settingKey = "dbConnRead") {
-            var values = dbSettings.Values<string>(settingKey).ToArray(); return values;
+        private static string[] GetReadConnStringArry(string settingKey = "dbConnRead") {
+            return dbSettings.Values<string>(settingKey).ToArray();
         }
 
+        /// <summary>
+        /// 取得分配的可读取数据库连接（此处为方法）
+        /// </summary>
+        public static string GetReadConnString() {
+            string settingKey = "dbConnRead";
+            if (connStringArrayForRead == null) connStringArrayForRead = GetReadConnStringArry(settingKey);
+
+            var random = new Random(++seed / connStringArrayForRead.Length);
+            var index = random.Next(0, connStringArrayForRead.Length);
+
+            return connStringArrayForRead[index];
+        }
+
+        /// <summary>
+        /// 可读取的数据库连接（此处为属性）
+        /// </summary>
+        public static string ReadConnString { get { return GetReadConnString(); } }
+
+        public static string WriteConnString { get { return GetWriteConnString(); } }
+
+        #endregion
+
+
+        #region 取得Connection、Command、DataAdapter
+
+        public static IDbConnection GetConnection(bool canWrite = false, string connString = null) {
+            connString = string.IsNullOrEmpty(connString) ? (canWrite ? WriteConnString : ReadConnString) : connString;
+            string dbObjType = "Connection";
+            try {
+                var assembly = Assembly.LoadFrom(GetDbAssembly());
+                var headStr = GetDbObjectHeadString();
+                var conn = (IDbConnection)assembly.GetType(headStr + dbObjType);
+                if (conn != null) conn.ConnectionString = connString;
+                return conn;
+            } catch (Exception ex) {
+                return null;
+                throw new Exception($"序号：FineCore.DB.DbSettings.00000004_1；{ex.Message}");
+            }
+        }
+
+        public static IDbCommand GetCommand(string cmdText = null, IEnumerable<IDataParameter> paras = null, CommandType cmdType = CommandType.Text) {
+            string dbObjType = "Command";
+            try {
+                var assembly = Assembly.LoadFrom(GetDbAssembly());
+                var headStr = GetDbObjectHeadString();
+                var cmd = (IDbCommand)assembly.GetType(headStr + dbObjType);
+                if (cmd != null) {
+                    cmd.CommandText = cmdText;
+                    cmd.CommandType = cmdType;
+                    if (paras != null) {
+                        foreach (var para in paras) {
+                            if (para != null) cmd.Parameters.Add(para);
+                        }
+                    }
+                }
+                return cmd;
+            } catch (Exception ex) {
+                return null;
+                throw new Exception($"序号：FineCore.DB.DbSettings.00000004_2；{ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 数据适配器
+        /// </summary>
+        /// <param name="cmdText">查询命令</param>
+        /// <param name="connString">连接字符串</param>
+        /// <param name="paras">查询参数IDataParameter</param>
+        /// <param name="cmdType">查询命令类型CommandType</param>
+        /// <returns>返回数据适配器</returns>
+        public static IDbDataAdapter GetDataAdapter(string cmdText, string connString, IEnumerable<IDataParameter> paras, CommandType cmdType = CommandType.Text) {
+            string dbObjType = "DataAdapter";
+
+            try {
+                var cmd = GetCommand(cmdText, paras, cmdType);
+                var assembly = Assembly.LoadFrom(GetDbAssembly());
+                var headStr = GetDbObjectHeadString();
+                var adapter = (IDbDataAdapter)assembly.GetType(headStr + dbObjType);
+                if (adapter != null) { adapter.SelectCommand = cmd; adapter.SelectCommand.Connection = GetConnection(false, connString); }
+                return adapter;
+            } catch (Exception ex) {
+                return null;
+                throw new Exception($"序号：FineCore.DB.DbSettings.00000004_3_0；{ex.Message}");
+            }
+        }
+        
+        /// <summary>
+        /// 取数据适配器
+        /// </summary>
+        /// <param name="cmd">查询命令</param>
+        /// <param name="paras">查询参数</param>
+        /// <returns>返回适配器</returns>
+        public static IDbDataAdapter GetDataAdapter(IDbCommand cmd, IEnumerable<IDataParameter> paras = null) {
+            string dbObjType = "DataAdapter";
+            try {
+                var assembly = Assembly.LoadFrom(GetDbAssembly());
+                var headStr = GetDbObjectHeadString();
+                var adapter = (IDbDataAdapter)assembly.GetType(headStr + dbObjType);
+                if (adapter != null) { if (paras != null) {
+                        foreach (var para in paras) {
+                            if (para != null) cmd.Parameters.Add(para);
+                        }
+                    }
+                    adapter.SelectCommand = cmd;
+                }
+                return adapter;
+            }catch(Exception ex) {
+                return null;
+                throw new Exception($"序号：FineCore.DB.DbSettings.00000004_3_1；{ex.Message}");
+            }
+        }
+
+
+
+        #endregion
     }
 }

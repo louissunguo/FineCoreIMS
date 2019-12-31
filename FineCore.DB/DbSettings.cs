@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Reflection;
@@ -47,28 +49,27 @@ namespace FineCore.DB {
         /// <summary>
         /// 文本读取器
         /// </summary>
-        private static TextReader textReader {
+        private static JObject dbSettings {
             get {
                 try {
                     var content = streamReader.ReadToEnd();
-                    return new StringReader(content);
+                    var jsonObj = JsonConvert.DeserializeObject<JObject>(content);
+                    return jsonObj;
                 } catch (Exception ex) {
                     throw new Exception($"序号：FineCore.DB.DbSettings.00000003{ex.Message}");
                 }
             }
         }
 
-        /// <summary>
-        /// JSON文本读取器
-        /// </summary>
-        private static JsonReader Reader { get { return new JsonTextReader(textReader); } }
-
         #endregion
 
         /// <summary>
-        /// Database驱动：DbProvider
+        /// 取Database驱动：GetDbProvider
         /// </summary>
-        public static string DbProvider { get { var value = Reader.Read()? $"{Reader.Value}":string.Empty; return value; } }
+        public static string GetDbProvider(string settingKey="dbProvider") { 
+            var value = dbSettings.Value<string>("dbProvider"); return value;
+        }
+
 
     }
 }

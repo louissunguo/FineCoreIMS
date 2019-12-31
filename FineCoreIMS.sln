@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.D", "FineCore.D\Fi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.M.Business", "FineCore.M.Business\FineCore.M.Business.csproj", "{8AD2A9F1-B28B-4A89-84E1-4D85D00D83D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.DB", "FineCore.DB\FineCore.DB.csproj", "{ECCC8BCC-CC66-401B-A7CD-948275D4B3DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.DB", "FineCore.DB\FineCore.DB.csproj", "{ECCC8BCC-CC66-401B-A7CD-948275D4B3DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.WebSite", "FineCore.WebSite\FineCore.WebSite.csproj", "{6647E0BC-ABBB-454A-A3F5-F96F071995BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{ECCC8BCC-CC66-401B-A7CD-948275D4B3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECCC8BCC-CC66-401B-A7CD-948275D4B3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECCC8BCC-CC66-401B-A7CD-948275D4B3DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6647E0BC-ABBB-454A-A3F5-F96F071995BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6647E0BC-ABBB-454A-A3F5-F96F071995BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6647E0BC-ABBB-454A-A3F5-F96F071995BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6647E0BC-ABBB-454A-A3F5-F96F071995BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

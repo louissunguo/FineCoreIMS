@@ -1,0 +1,5 @@
+{
+  "dbProvider": "SQLSERVER",
+  "dbAssembly": "System.Data.SqlClient.dll",
+  "dbConnWrite": "DataSource=.;Inital Catalog=IMS;User Id=sa;Password=sg1028@ca;"
+}

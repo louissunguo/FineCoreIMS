@@ -2,7 +2,7 @@
 using FineCore.Attributes;
 using System.Threading;
 
-namespace  FineCore.M {
+namespace FineCore.M {
     public enum Compair {
 
         [Field("开始于", "LIKE")]

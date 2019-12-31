@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace  FineCore.Attributes {
+namespace FineCore.Attributes {
     public static class AttributeExtends {
         /// <summary>
         /// 特性校验
@@ -19,8 +19,8 @@ namespace  FineCore.Attributes {
             var isValid = true;
             foreach (var pi in piArr) {
                 var val = pi.GetValue(model);
-                if (pi.IsDefined(typeof(StringValidatorAttribute), true)) {
-                    var att = (TAttribute)pi.GetCustomAttribute(typeof(StringValidatorAttribute), true);
+                if (pi.IsDefined(typeof(TAttribute), true)) {
+                    var att = pi.GetCustomAttribute<TAttribute>(true);
                     if (att != null) isValid &= att.Validate(val);
                 }
             }

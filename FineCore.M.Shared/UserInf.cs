@@ -1,6 +1,6 @@
 ﻿using FineCore.Attributes;
 
-namespace  FineCore.M.Shared {
+namespace FineCore.M.Shared {
     [TableName("UserInf")]
     public class UserInf: NamedModel {
         [ColumnName("UserName",true)]

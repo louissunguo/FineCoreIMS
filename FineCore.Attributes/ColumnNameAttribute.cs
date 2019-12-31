@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace  FineCore.Attributes {
+namespace FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class ColumnNameAttribute : AttributeBase {
 
-        private string _ColumnName = string.Empty;
-        private bool _IsPrimaryKey = false,
-                     _IsForeignKey = false;
+        private readonly string _ColumnName = string.Empty;
+        private readonly bool _IsPrimaryKey = false;
+        private readonly bool _IsForeignKey = false;
 
         private ColumnNameAttribute() { }
 
@@ -16,6 +16,8 @@ namespace  FineCore.Attributes {
             _IsForeignKey = IsForeignKey;
         }
 
-        public override bool Validate(object value) { return true; }
+        public string ColumnName { get { return _ColumnName; } }
+        public bool IsPrimaryKey { get { return _IsPrimaryKey; } }
+        public bool IsForeignKey { get { return _IsForeignKey; } }
     }
 }

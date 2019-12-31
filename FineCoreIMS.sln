@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.M", "FineCore.M\FineCore.M.csproj", "{BFE0DFBB-859B-44E8-A1FE-4FDEBC00D68C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.M", "FineCore.M\FineCore.M.csproj", "{BFE0DFBB-859B-44E8-A1FE-4FDEBC00D68C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.M.Shared", "FineCore.M.Shared\FineCore.M.Shared.csproj", "{879E5E2F-53BB-48A4-93EB-6C5E4EFE66CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.M.Shared", "FineCore.M.Shared\FineCore.M.Shared.csproj", "{879E5E2F-53BB-48A4-93EB-6C5E4EFE66CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.Attributes", "FineCore.Attributes\FineCore.Attributes.csproj", "{9EE875DA-1EF1-435E-AADE-D51970BA3A51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.Attributes", "FineCore.Attributes\FineCore.Attributes.csproj", "{9EE875DA-1EF1-435E-AADE-D51970BA3A51}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.D", "FineCore.D\FineCore.D.csproj", "{E340AAD8-BF2A-470F-A0A5-62133E901D53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.M.Business", "FineCore.M.Business\FineCore.M.Business.csproj", "{8AD2A9F1-B28B-4A89-84E1-4D85D00D83D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{9EE875DA-1EF1-435E-AADE-D51970BA3A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EE875DA-1EF1-435E-AADE-D51970BA3A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EE875DA-1EF1-435E-AADE-D51970BA3A51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E340AAD8-BF2A-470F-A0A5-62133E901D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E340AAD8-BF2A-470F-A0A5-62133E901D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E340AAD8-BF2A-470F-A0A5-62133E901D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E340AAD8-BF2A-470F-A0A5-62133E901D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD2A9F1-B28B-4A89-84E1-4D85D00D83D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD2A9F1-B28B-4A89-84E1-4D85D00D83D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD2A9F1-B28B-4A89-84E1-4D85D00D83D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD2A9F1-B28B-4A89-84E1-4D85D00D83D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

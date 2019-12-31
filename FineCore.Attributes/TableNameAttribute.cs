@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace  FineCore.Attributes {
+namespace FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Class)]
     public class TableNameAttribute : AttributeBase {
 
@@ -10,6 +10,5 @@ namespace  FineCore.Attributes {
 
         public TableNameAttribute(string TableName) { this.TableName = TableName; }
 
-        public override bool Validate(object value) { return true; }
     }
 }

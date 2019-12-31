@@ -1,4 +1,11 @@
 {
-  "dbProvider": "System.Data.SqlClient.dll",
-  "dbConnString": "db"
+  "dbProvider": "SQLSERVER",
+  "dbAssembly": "System.Data.SqlClient.dll",
+  "dbConnWrite": "Data Source=.;Initial Catalog=MyDatabase;User Id=sa;Password=sg1028@ca;",
+  "dbConnRead": [
+    "Data Source=.;Initial Catalog=MyDatabase0;User Id=sa;Password=sg1028@ca;",
+    "Data Source=.;Initial Catalog=MyDatabase1;User Id=sa;Password=sg1028@ca;",
+    "Data Source=.;Initial Catalog=MyDatabase2;User Id=sa;Password=sg1028@ca;",
+    "Data Source=.;Initial Catalog=MyDatabase3;User Id=sa;Password=sg1028@ca;"
+  ]
 }

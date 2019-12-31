@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Xml;
 
@@ -22,8 +23,10 @@ namespace FineCore.DB {
             get {
                 try {
                     var dir = Environment.CurrentDirectory + "\\Configs";
-                    if (Directory.Exists(dir)) return dir;
-                    else return System.Environment.CurrentDirectory;
+                    if (Directory.Exists(dir)) 
+                        return dir;
+                    else 
+                        return System.Environment.CurrentDirectory;
                 } catch (Exception ex) {
                     throw new Exception($"序号：FineCore.DB.DbSettings.00000001{ex.Message}");
                 }
@@ -67,9 +70,23 @@ namespace FineCore.DB {
         /// 取Database驱动：GetDbProvider
         /// </summary>
         public static string GetDbProvider(string settingKey="dbProvider") { 
-            var value = dbSettings.Value<string>("dbProvider"); return value;
+            var value = dbSettings.Value<string>(settingKey); 
+            return value;
         }
 
+        /// <summary>
+        /// 取Database连接字符串（写数据）
+        /// </summary>
+        public static string GetWriteConnString(string settingKey = "dbConnWrite") {
+            var value = dbSettings.Value<string>(settingKey); return value;
+        }
+
+        /// <summary>
+        /// 取Database连接字符串（只读数据）
+        /// </summary>
+        public static string[] GetReadConnStringArry(string settingKey = "dbConnRead") {
+            var values = dbSettings.Values<string>(settingKey).ToArray(); return values;
+        }
 
     }
 }

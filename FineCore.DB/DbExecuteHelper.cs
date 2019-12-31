@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FineCore.D {
+namespace FineCore.DB {
     public static class DbExecuteHelper {
     }
 }

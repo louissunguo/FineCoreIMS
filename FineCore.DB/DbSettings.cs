@@ -70,5 +70,7 @@ namespace FineCore.DB {
         /// </summary>
         public static string DbProvider { get { var value = Reader.Read()? $"{Reader.Value}":string.Empty; return value; } }
 
+
+
     }
 }

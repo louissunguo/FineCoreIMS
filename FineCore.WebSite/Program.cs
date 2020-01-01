@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace FineCore.WebSite {
-    public class Program {
+    public partial class Program {
         public static void Main(string[] args) {
             CreateHostBuilder(args).Build().Run();
         }

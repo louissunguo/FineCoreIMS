@@ -10,4 +10,8 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FineCore.M\FineCore.M.csproj" />
+  </ItemGroup>
+
 </Project>

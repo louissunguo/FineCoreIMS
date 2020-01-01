@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 namespace FineCore.B {
-    public class Approver : BaseService, IApprover {
+    public partial class Approver : BaseService, IApprover {
         public int Approve(Type modelType, int modelId) {
             var approverId = CurrentUser.Id;
 

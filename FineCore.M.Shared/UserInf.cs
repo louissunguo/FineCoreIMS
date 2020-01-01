@@ -2,7 +2,7 @@
 
 namespace FineCore.M.Shared {
     [TableName("UserInf")]
-    public class UserInf: NamedModel {
+    public partial class UserInf: NamedModel {
         [ColumnName("UserName",true)]
         [StringValidator(5,50)]
         public string UserName { get; set; }

@@ -2,7 +2,7 @@
 
 namespace FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-    public class ColumnNameAttribute : AttributeBase {
+    public partial class ColumnNameAttribute : AttributeBase {
 
         private readonly string _ColumnName = string.Empty;
         private readonly bool _IsPrimaryKey = false;

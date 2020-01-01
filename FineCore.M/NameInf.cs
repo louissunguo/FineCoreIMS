@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace FineCore.M {
     [TableName("NameInf")]
-    public class NameInf : BaseModel {
+    public partial class NameInf : BaseModel {
 
         [ColumnName("RefTable")]
         public string RefTable { get; set; }

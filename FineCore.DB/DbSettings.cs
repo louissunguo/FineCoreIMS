@@ -13,7 +13,7 @@ namespace FineCore.DB {
     /// <summary>
     /// 数据库设置
     /// </summary>
-    public static class DbSettings {
+    public static partial class DbSettings {
         private static int seed = 0;
         private static string[] connStringArrayForRead = GetReadConnStringArry();
 
@@ -127,7 +127,7 @@ namespace FineCore.DB {
         #region 取得Connection、Command、DataAdapter
 
         public static IDbConnection GetConnection(bool canWrite = false, string connString = null) {
-            connString = string.IsNullOrEmpty(connString) ? (canWrite ? WriteConnString : ReadConnString) : connString;
+            connString = string.IsNullOrEmpty(connString) || string.IsNullOrWhiteSpace(connString) ? (canWrite ? WriteConnString : ReadConnString) : connString;
             string dbObjType = "Connection";
             try {
                 var assembly = Assembly.LoadFrom(GetDbAssembly());
@@ -152,7 +152,7 @@ namespace FineCore.DB {
                     cmd.CommandType = cmdType;
                     if (paras != null) {
                         foreach (var para in paras) {
-                            if (para != null) cmd.Parameters.Add(para);
+                            if (para != null && !cmd.Parameters.Contains(para)) cmd.Parameters.Add(para);
                         }
                     }
                 }
@@ -186,7 +186,7 @@ namespace FineCore.DB {
                 throw new Exception($"序号：FineCore.DB.DbSettings.00000004_3_0；{ex.Message}");
             }
         }
-        
+
         /// <summary>
         /// 取数据适配器
         /// </summary>
@@ -199,7 +199,8 @@ namespace FineCore.DB {
                 var assembly = Assembly.LoadFrom(GetDbAssembly());
                 var headStr = GetDbObjectHeadString();
                 var adapter = (IDbDataAdapter)assembly.GetType(headStr + dbObjType);
-                if (adapter != null) { if (paras != null) {
+                if (adapter != null) {
+                    if (paras != null) {
                         foreach (var para in paras) {
                             if (para != null) cmd.Parameters.Add(para);
                         }
@@ -207,7 +208,7 @@ namespace FineCore.DB {
                     adapter.SelectCommand = cmd;
                 }
                 return adapter;
-            }catch(Exception ex) {
+            } catch (Exception ex) {
                 return null;
                 throw new Exception($"序号：FineCore.DB.DbSettings.00000004_3_1；{ex.Message}");
             }

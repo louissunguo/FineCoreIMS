@@ -2,7 +2,7 @@
 
 namespace FineCore.M.Shared {
     [TableName("DeptInf")]
-    public class DeptInf : NamedModel {
+    public partial class DeptInf : NamedModel {
         /// <summary>
         /// 部门经理
         /// </summary>

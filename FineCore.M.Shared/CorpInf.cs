@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FineCore.M.Shared {
     [TableName("CorpInf")]
-    public class CorpInf : NamedModel {
+    public partial class CorpInf : NamedModel {
         /// <summary>
         /// CEO
         /// </summary>

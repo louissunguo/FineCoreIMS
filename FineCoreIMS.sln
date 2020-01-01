@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.WebSite", "FineCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.B", "FineCore.B\FineCore.B.csproj", "{179B6BA7-E610-4E95-9086-C90C87C788FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.B.Interfaces", "FineCore.B.Interfaces\FineCore.B.Interfaces.csproj", "{581B0631-0EA8-47D2-B448-CD33D71CE24D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.B.Interfaces", "FineCore.B.Interfaces\FineCore.B.Interfaces.csproj", "{581B0631-0EA8-47D2-B448-CD33D71CE24D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

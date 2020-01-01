@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace FineCore.WebSite {
-    public class Startup {
+    public partial class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
         }

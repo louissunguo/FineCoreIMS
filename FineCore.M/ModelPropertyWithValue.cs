@@ -5,7 +5,7 @@ using System.Text;
 namespace FineCore.M {
 
 
-    public class ModelPropertyWithValue {
+    public partial class ModelPropertyWithValue {
         private bool ForWrite = true;
         public string PropertyName { get; private set; }
 

@@ -2,7 +2,7 @@
 using System.Data;
 
 namespace FineCore.DB {
-    public class DbCommandSet {
+    public partial class DbCommandSet {
 
         private IDbCommand _Command=null;
 

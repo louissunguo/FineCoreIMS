@@ -2,7 +2,7 @@
 
 namespace FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Field)]
-    public class FieldAttribute : AttributeBase {
+    public partial class FieldAttribute : AttributeBase {
         public string FieldName { get; private set; }
         public string Operator { get; private set; }
         private FieldAttribute() { }

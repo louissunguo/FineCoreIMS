@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FineCore.B {
-    public class GeneralUser :BaseService, IGeneralUser {
+    public partial class GeneralUser :BaseService, IGeneralUser {
         
         public int Save(BaseModel model) {
             throw new NotImplementedException();

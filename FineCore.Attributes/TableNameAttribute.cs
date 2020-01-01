@@ -2,7 +2,7 @@
 
 namespace FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Class)]
-    public class TableNameAttribute : AttributeBase {
+    public partial class TableNameAttribute : AttributeBase {
 
         public string TableName { get; private set; } = string.Empty;
 

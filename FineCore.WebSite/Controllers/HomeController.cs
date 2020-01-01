@@ -4,7 +4,7 @@ using FineCore.WebSite.Models;
 using Microsoft.Extensions.Logging;
 
 namespace FineCore.WebSite.Controllers {
-    public class HomeController : Controller {
+    public partial class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
         private readonly ILoggerFactory _loggerFactory;
 

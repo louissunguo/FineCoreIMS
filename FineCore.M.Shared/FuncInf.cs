@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FineCore.M.Shared {
     [TableName("FuncInf")]
-    public class FuncInf : NamedModel {
+    public partial class FuncInf : NamedModel {
         /// <summary>
         /// 页面完整路径（用于网站版）
         /// </summary>

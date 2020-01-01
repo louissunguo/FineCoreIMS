@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace FineCore.Attributes {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class StringValidatorAttribute : AttributeBase {
+    public partial class StringValidatorAttribute : AttributeBase {
 
 
         public int MinSize { get; private set; }

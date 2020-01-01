@@ -30,6 +30,15 @@ namespace FineCore.DB {
             return ds;
         }
 
+        public static IDataReader GetDataReader(string cmdText, string connString, IEnumerable<IDataParameter> paras, CommandType cmdType = CommandType.Text) {
+            var cmd = DbSettings.GetCommand(cmdText, paras, cmdType);
+            var con = DbSettings.GetConnection(false, connString);
+            if (cmd != null && con != null) cmd.Connection = con;
+            if (cmd.Connection.State != ConnectionState.Open) cmd.Connection.Open();
+            var reader = cmd.ExecuteReader();
+            return reader;
+        }
+
         #endregion
 
         #region 写入（增、删、改）

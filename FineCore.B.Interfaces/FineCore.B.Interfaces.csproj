@@ -1,11 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
     <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FineCore.M.Business\FineCore.M.Business.csproj" />
+    <ProjectReference Include="..\FineCore.M.Shared\FineCore.M.Shared.csproj" />
   </ItemGroup>
 
 </Project>

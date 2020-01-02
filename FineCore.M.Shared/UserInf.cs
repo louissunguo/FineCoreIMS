@@ -1,4 +1,5 @@
 ﻿using FineCore.Attributes;
+using System.Collections.Generic;
 
 namespace FineCore.M.Shared {
     [TableName("UserInf")]
@@ -21,6 +22,8 @@ namespace FineCore.M.Shared {
         [ColumnName("WechatNo", true)]
         [StringValidator(5, 64)]
         public string WechatNo { get; set; }
+
+        public List<FuncInf> Funcs = new List<FuncInf>();
 
     }
 }

@@ -1,0 +1,12 @@
+2020-01-02 19:50:07,899 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000
+2020-01-02 19:50:07,930 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000
+2020-01-02 19:50:07,937 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2020-01-02 19:50:07,942 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2020-01-02 19:50:07,978 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2020-01-02 19:50:07,984 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2020-01-02 19:50:07,992 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Administrator\Source\Repos\FineCoreIMS\FineCore.WebSite
+2020-01-02 19:50:07,996 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Administrator\Source\Repos\FineCoreIMS\FineCore.WebSite
+2020-01-02 19:50:09,429 [4] ERROR FineCore.WebSite.Controllers.HomeController - Hi, 这是Log4net日志。
+2020-01-02 19:50:09,435 [4] ERROR FineCore.WebSite.Controllers.HomeController - Hi, 这是Log4net日志。
+2020-01-02 19:50:09,531 [4] WARN  FineCore.WebSite.Controllers.HomeController - SQLSERVER
+2020-01-02 19:50:09,535 [4] WARN  FineCore.WebSite.Controllers.HomeController - SQLSERVER

@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.B", "FineCore.B\Fi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.B.Interfaces", "FineCore.B.Interfaces\FineCore.B.Interfaces.csproj", "{581B0631-0EA8-47D2-B448-CD33D71CE24D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.WebSite.Controllers", "FineCore.WebSite.Controllers\FineCore.WebSite.Controllers.csproj", "{950E5E5F-7123-4C53-99D5-C2B423D338AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.WebSite.Models", "FineCore.WebSite.Models\FineCore.WebSite.Models.csproj", "{005A04AE-D71F-4C02-9DCD-0041FFCCB4CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{581B0631-0EA8-47D2-B448-CD33D71CE24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{581B0631-0EA8-47D2-B448-CD33D71CE24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{581B0631-0EA8-47D2-B448-CD33D71CE24D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{950E5E5F-7123-4C53-99D5-C2B423D338AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950E5E5F-7123-4C53-99D5-C2B423D338AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950E5E5F-7123-4C53-99D5-C2B423D338AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950E5E5F-7123-4C53-99D5-C2B423D338AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005A04AE-D71F-4C02-9DCD-0041FFCCB4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005A04AE-D71F-4C02-9DCD-0041FFCCB4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005A04AE-D71F-4C02-9DCD-0041FFCCB4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005A04AE-D71F-4C02-9DCD-0041FFCCB4CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

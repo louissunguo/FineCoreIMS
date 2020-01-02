@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>FineCore.WebSite.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,6 +29,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FineCore.DB\FineCore.DB.csproj" />
+    <ProjectReference Include="..\FineCore.WebSite.Controllers\FineCore.WebSite.Controllers.csproj" />
+    <ProjectReference Include="..\FineCore.WebSite.Models\FineCore.WebSite.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

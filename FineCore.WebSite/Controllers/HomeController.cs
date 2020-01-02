@@ -19,8 +19,7 @@ namespace FineCore.WebSite.Controllers {
 
         public IActionResult Index() {
             var dbProvider = FineCore.DB.DbSettings.GetDbProvider();
-            _logger.LogDebug("Hi, 这是Log4net日志。");
-            _logger.LogWarning("This is HomeController-Index");
+            _logger.LogWarning("Hi, 这是Log4net日志。");
             _loggerFactory.CreateLogger<HomeController>().LogWarning("This is HomeController-Index 1");
             return View();
         }

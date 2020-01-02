@@ -18,7 +18,7 @@ namespace FineCore.M {
         #region 本地使用
 
 
-        public string CurrentSystemLanguage { get { return Thread.CurrentThread.CurrentCulture.Name; } }
+        public static string CurrentSystemLanguage { get { return Thread.CurrentThread.CurrentCulture.Name; } }
 
         public string GetTableName() {
             var type = GetType();

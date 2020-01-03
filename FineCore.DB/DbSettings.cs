@@ -2,12 +2,10 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Xml;
 
 namespace FineCore.DB {
     /// <summary>
@@ -221,6 +219,27 @@ namespace FineCore.DB {
             }
         }
 
+        /// <summary>
+        /// 构造Parameter
+        /// </summary>
+        /// <param name="paraName"></param>
+        /// <param name="paraValue"></param>
+        /// <param name="isId">是否是可由系统自动产生的Id,默认为否</param>
+        /// <returns></returns>
+        public static IDataParameter GetParameter(string paraName, object paraValue, bool isId = false) {
+            string dbObjType = "Parameter";
+            paraValue = paraValue ?? DBNull.Value;
+            try {
+                var assembly = Assembly.LoadFrom(GetDbAssembly());
+                var headStr = GetDbObjectHeadString();
+                var para = (IDataParameter)assembly.GetType(headStr + dbObjType);
+                if (para != null) { para.ParameterName = paraName; para.Value = isId && int.Parse($"{paraValue}") <= 0 ? DBNull.Value : paraValue; }
+                return para;
+            } catch (Exception ex) {
+                return null;
+                throw new Exception($"序号：FineCore.DB.DbSettings.00000004_5(构造Parameter失败)；{ex.Message}");
+            }
+        }
 
 
         #endregion

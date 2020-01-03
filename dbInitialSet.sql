@@ -2,9 +2,16 @@
 exec ('create database '+@dbName)
 go
 exec('USE '+@dbName+
-' create CreateBizDb(@dbName nvarchar(128),@path nvarchar(256),@dbInitSize int=10,@dbMaxSize int=500,@dbGrowth int=5,@logInitSize int=5,@logMaxSize=25,@logGrowth=5)
+' create CreateBizDb(
+        @dbName nvarchar(128),  @path nvarchar(256)=null,
+        @dbInitSize int=10,     @dbMaxSize int=500,     @dbGrowth int=5,
+        @logInitSize int=5,     @logMaxSize int=2500,         @logGrowth int=5)
 	as
 	begin
+        if len(isnull(@path,''))==0
+        begin
+            set @path=(select filename from master.dbo.sysdatabases where name = ''master'')
+        end
 		create database @dbName 
         ON 
         ( NAME = @dbName,
@@ -18,8 +25,7 @@ exec('USE '+@dbName+
             IZE = @dbInitSize+''MB'',
             MAXSIZE = @dbMaxSize+''MB'',
             FILEGROWTH =  @dbGrowth+''MB'' ) ;
-	end
-'
+	end'
 )
 go
 /*开始建表（名称信息）*/

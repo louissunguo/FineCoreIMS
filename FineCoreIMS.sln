@@ -25,8 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.WebSite.Controller
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.WebSite.Models", "FineCore.WebSite.Models\FineCore.WebSite.Models.csproj", "{005A04AE-D71F-4C02-9DCD-0041FFCCB4CB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbScript", "DbScript", "{3A5B77C0-C5F1-4F8E-8E29-7CD6889E9E23}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbScripts", "DbScripts", "{3A5B77C0-C5F1-4F8E-8E29-7CD6889E9E23}"
 	ProjectSection(SolutionItems) = preProject
+		dbBizDbSet.sql = dbBizDbSet.sql
 		dbInitialSet.sql = dbInitialSet.sql
 	EndProjectSection
 EndProject

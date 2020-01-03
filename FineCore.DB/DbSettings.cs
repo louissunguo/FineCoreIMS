@@ -141,6 +141,13 @@ namespace FineCore.DB {
             }
         }
 
+        /// <summary>
+        /// 生成查询命令
+        /// </summary>
+        /// <param name="cmdText">查询语句</param>
+        /// <param name="paras">查询参数</param>
+        /// <param name="cmdType">查询语句类型</param>
+        /// <returns></returns>
         public static IDbCommand GetCommand(string cmdText = null, IEnumerable<IDataParameter> paras = null, CommandType cmdType = CommandType.Text) {
             string dbObjType = "Command";
             try {

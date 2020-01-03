@@ -7,6 +7,7 @@ namespace FineCore.M {
     public partial class NameInf : BaseModel {
 
         [ColumnName("RefTable")]
+        [StringValidator(1,128)]
         public string RefTable { get; set; }
 
         [ColumnName("RefModelId")]
@@ -14,9 +15,11 @@ namespace FineCore.M {
 
 
         [ColumnName("DisplayText")]
+        [StringValidator(1, 128)]
         public string DisplayText { get; set; }
 
         [ColumnName("LanguageName")]
+        [StringValidator(1, 6)]
         public string Language { get; set; } = CurrentSystemLanguage;
 
     }

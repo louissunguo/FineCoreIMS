@@ -30,7 +30,7 @@ namespace FineCore.WebSite {
             } else {
                 app.UseExceptionHandler("/Home/Error");
             }
-            //若需要指定配置文件路径，则在此方法中传入路径作为参数
+            //若需要指定配置文件路径，则在此方法中传入路径作为参数            
             loggerFactory.AddLog4Net("Configs\\log4net.config");
             app.UseStaticFiles();
             app.UseRouting();

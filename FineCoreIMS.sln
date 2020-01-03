@@ -21,9 +21,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.B", "FineCore.B\Fi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.B.Interfaces", "FineCore.B.Interfaces\FineCore.B.Interfaces.csproj", "{581B0631-0EA8-47D2-B448-CD33D71CE24D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.WebSite.Controllers", "FineCore.WebSite.Controllers\FineCore.WebSite.Controllers.csproj", "{950E5E5F-7123-4C53-99D5-C2B423D338AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.WebSite.Controllers", "FineCore.WebSite.Controllers\FineCore.WebSite.Controllers.csproj", "{950E5E5F-7123-4C53-99D5-C2B423D338AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineCore.WebSite.Models", "FineCore.WebSite.Models\FineCore.WebSite.Models.csproj", "{005A04AE-D71F-4C02-9DCD-0041FFCCB4CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FineCore.WebSite.Models", "FineCore.WebSite.Models\FineCore.WebSite.Models.csproj", "{005A04AE-D71F-4C02-9DCD-0041FFCCB4CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbScript", "DbScript", "{3A5B77C0-C5F1-4F8E-8E29-7CD6889E9E23}"
+	ProjectSection(SolutionItems) = preProject
+		dbInitialSet.sql = dbInitialSet.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

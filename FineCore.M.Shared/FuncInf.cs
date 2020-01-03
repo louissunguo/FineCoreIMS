@@ -24,5 +24,10 @@ namespace FineCore.M.Shared {
         [ColumnName("DescriptionText")]
         public string Description { get; set; }
 
+        /// <summary>
+        /// 上一级功能（目录）
+        /// </summary>
+        [ColumnName("ParentId")]
+        public int ParentId { get; set; } = 0;
     }
 }

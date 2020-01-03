@@ -11,6 +11,7 @@ namespace FineCore.M.Shared {
         /// 描述
         /// </summary>
         [ColumnName("DescriptionText")]
+        [StringValidator(0,256)]
         public string Description { get; set; }
 
     }

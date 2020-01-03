@@ -11,11 +11,12 @@ namespace FineCore.WebSite.Controllers {
         public HomeController(ILogger<HomeController> logger,IGeneralUser user) { _logger = logger; this.user = user; }
 
         public IActionResult Index() {
-            //_logger.LogError("Hi, 这是Log4net日志。");
-            //var dbProvider = FineCore.DB.DbSettings.GetDbProvider();
-            //_logger.LogWarning($"{dbProvider}");
+             
 
-            var logined = user.CheckLogin("","","");
+
+             //_logger.LogWarning($"{dbProvider}");
+
+             var logined = user.CheckLogin("","","");
 
             return View();
         }
@@ -29,6 +30,7 @@ namespace FineCore.WebSite.Controllers {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        [HttpGet]
         public string getMenuData(int userId,int parentId=0) {
             var user = new FineCore.B.GeneralUser();
             var logined = user.CheckLogin("", "", "");

@@ -1,5 +1,13 @@
 {
   "dbProvider": "SQLSERVER",
   "dbAssembly": "System.Data.SqlClient.dll",
-  "dbConnWrite": "DataSource=.;Inital Catalog=IMS;User Id=sa;Password=sg1028@ca;"
+  "dbConnWrite": "DataSource=.;Inital Catalog=IMS;User Id=sa;Password=sg1028@ca;",
+  "dbConnRead": [
+    "DataSource=.;Inital Catalog=IMS;User Id=sa;Password=sg1028@ca;",
+    "DataSource=.;Inital Catalog=IMS;User Id=sa;Password=sg1028@ca;",
+    "DataSource=.;Inital Catalog=IMS;User Id=sa;Password=sg1028@ca;",
+    "DataSource=.;Inital Catalog=IMS;User Id=sa;Password=sg1028@ca;",
+    "DataSource=.;Inital Catalog=IMS;User Id=sa;Password=sg1028@ca;"
+  ],
+  "dbdbObjectHeadString": "System.Data.SqlClient.Sql"
 }

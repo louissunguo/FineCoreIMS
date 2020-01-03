@@ -10,23 +10,23 @@ namespace FineCore.M.Shared {
         /// CEO
         /// </summary>
 
-        [ColumnName("ChiefExecuteOfficerId", false, true)]
+        [ColumnName("CEOId", false, true)]
         public int ChiefExecuteOfficerId { get; set; }
 
         /// <summary>
         /// 总经理
         /// </summary>
-        [ColumnName("GeneralManagerId", false, true)]
+        [ColumnName("GMId", false, true)]
         public int GeneralManagerId { get; set; }
 
         /// <summary>
         /// CFO
         /// </summary>
-        [ColumnName("ChiefFinancialOfficerId", false, true)]
+        [ColumnName("CFOId", false, true)]
         public int ChiefFinancialOfficerId { get; set; }
 
         /// <summary>
-        /// 会计
+        /// 出纳
         /// </summary>
         [ColumnName("CashierId", false, true)]
         public int CashierId { get; set; }

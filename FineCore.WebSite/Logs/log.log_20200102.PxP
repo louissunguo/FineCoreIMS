@@ -1,0 +1,36 @@
+2020-01-02 10:30:51,915 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000
+2020-01-02 10:30:51,937 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2020-01-02 10:30:51,944 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2020-01-02 10:30:51,950 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Jack\Source\Repos\louissunguo\FineCoreIMS\FineCore.WebSite
+2020-01-02 10:31:04,551 [10] WARN  FineCore.WebSite.Controllers.HomeController - This is HomeController-Index
+2020-01-02 10:31:04,558 [10] WARN  FineCore.WebSite.Controllers.HomeController - This is HomeController-Index 1
+2020-01-02 10:32:24,693 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000
+2020-01-02 10:32:24,712 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2020-01-02 10:32:24,721 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2020-01-02 10:32:24,728 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Jack\Source\Repos\louissunguo\FineCoreIMS\FineCore.WebSite
+2020-01-02 10:46:38,213 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000
+2020-01-02 10:46:38,232 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2020-01-02 10:46:38,240 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2020-01-02 10:46:38,248 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Jack\Source\Repos\louissunguo\FineCoreIMS\FineCore.WebSite
+2020-01-02 10:46:40,258 [13] WARN  FineCore.WebSite.Controllers.HomeController - Hi, 这是Log4net日志。
+2020-01-02 10:46:40,266 [13] WARN  FineCore.WebSite.Controllers.HomeController - This is HomeController-Index 1
+2020-01-02 13:11:48,151 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000
+2020-01-02 13:11:48,168 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2020-01-02 13:11:48,176 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2020-01-02 13:11:48,183 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Jack\Source\Repos\louissunguo\FineCoreIMS\FineCore.WebSite
+2020-01-02 13:11:49,025 [8] WARN  FineCore.WebSite.Controllers.HomeController - Hi, 这是Log4net日志。
+2020-01-02 13:11:49,033 [8] WARN  FineCore.WebSite.Controllers.HomeController - This is HomeController-Index 1
+2020-01-02 15:03:59,286 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000
+2020-01-02 15:03:59,303 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2020-01-02 15:03:59,311 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2020-01-02 15:03:59,322 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Jack\Source\Repos\louissunguo\FineCoreIMS\FineCore.WebSite
+2020-01-02 15:04:00,010 [9] WARN  FineCore.WebSite.Controllers.HomeController - Hi, 这是Log4net日志。
+2020-01-02 15:04:00,163 [9] WARN  FineCore.WebSite.Controllers.HomeController - SQLSERVER
+2020-01-02 15:04:13,213 [2] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2020-01-02 15:04:22,248 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000
+2020-01-02 15:04:22,268 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2020-01-02 15:04:22,276 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development
+2020-01-02 15:04:22,284 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Jack\Source\Repos\louissunguo\FineCoreIMS\FineCore.WebSite
+2020-01-02 15:04:22,966 [10] WARN  FineCore.WebSite.Controllers.HomeController - Hi, 这是Log4net日志。
+2020-01-02 15:04:23,085 [10] WARN  FineCore.WebSite.Controllers.HomeController - SQLSERVER
+2020-01-02 15:05:15,680 [2] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...

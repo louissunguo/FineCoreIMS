@@ -15,6 +15,15 @@ namespace FineCore.DB {
         private static int seed = 0;
         private static string[] connStringArrayForRead = GetReadConnStringArry();
 
+        public static Dictionary<int, IDbConnection> DbReadConnections {
+            get {
+                var dic = new Dictionary<int, IDbConnection>();
+                var conArr = connStringArrayForRead.Select((connStr, i) => new KeyValuePair<int, IDbConnection>(i++, GetConnection(false, connStr)));
+                foreach (var c in conArr) { if (!dic.ContainsKey(c.Key)) dic.Add(c.Key, c.Value); }
+                return dic;
+            }
+        }
+
         #region 配置文件
 
         /// <summary>

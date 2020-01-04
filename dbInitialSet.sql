@@ -8,20 +8,16 @@ exec('USE '+@dbName+
         @logInitSize int=5,     @logMaxSize int=2500,         @logGrowth int=5)
 	as
 	begin
-        if len(isnull(@path,''))==0
-        begin
-            set @path=(select filename from master.dbo.sysdatabases where name = ''master'')
-        end
 		create database @dbName 
         ON 
         ( NAME = @dbName,
-            FILENAME = @path+''\\''+@dbName+''.mdf'',
+            FILENAME = isnull(@path,select SUBSTRING(filename,0, LEN(filename) - CHARINDEX(''\'', REVERSE(filename)) + 1) from master.dbo.sysdatabases )+''\\''+@dbName+''.mdf'',
             SIZE = @dbInitSize+''MB'',
             MAXSIZE = @dbMaxSize+''MB'',
             FILEGROWTH =  @dbGrowth+''MB'' )
         LOG ON
         ( NAME = @dbName+''_log'',
-            FILENAME = @path+''\\''+@dbName+''_log.ldf'',
+            FILENAME = isnull(@path,select SUBSTRING(filename,0, LEN(filename) - CHARINDEX(''\'', REVERSE(filename)) + 1) from master.dbo.sysdatabases )+''\\''+@dbName+''_log.ldf'',
             IZE = @dbInitSize+''MB'',
             MAXSIZE = @dbMaxSize+''MB'',
             FILEGROWTH =  @dbGrowth+''MB'' ) ;

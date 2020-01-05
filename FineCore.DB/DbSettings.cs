@@ -243,6 +243,8 @@ namespace FineCore.DB {
                 var headStr = GetDbObjectHeadString();
                 var para = (IDataParameter)assembly.GetType(headStr + dbObjType);
                 if (para != null) { para.ParameterName = paraName; para.Value = isId && int.Parse($"{paraValue}") <= 0 ? DBNull.Value : paraValue; }
+                //本系统特别约定，Id作为对象在数据库的特定Key
+                if (para.ParameterName.ToLower().Trim() == "@id") { para.Direction = ParameterDirection.InputOutput; }
                 return para;
             } catch (Exception ex) {
                 return null;

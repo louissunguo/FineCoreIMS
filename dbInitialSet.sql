@@ -87,4 +87,17 @@ ParentId int foreign key(ParentId) references FuncInf(Id),
 )
 go
 
+create table UserInf(
+	Id	int	identity(1,1) primary key(Id),
+	Actived bit default(1) not null,
+    /*添加字段*/
+	Code nvarchar(20) constraint pk_User_Code unique(Code) not null,
+    /*特有字段*/
+	UserName nvarchar(50) constraint pk_User_Name unique(UserName) not null,
+	LoginPwd nvarchar(64) not null,
+	EmailUrl nvarchar(64) not null,
+	MobileNo nchar(11)	not null,
+	WechatNo nvarchar(64) not null,
+)
+
 

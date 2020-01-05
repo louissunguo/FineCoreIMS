@@ -8,12 +8,13 @@ namespace FineCore.M.Shared {
         [StringValidator(5,50)]
         public string UserName { get; set; }
 
+        [ColumnName("LoginPwd")]
         [StringValidator(8, 20)]
-        public string LoginPwd { get; set; }
+        public string Password { get; set; }
 
         [StringValidator(8, 64)]
         [ColumnName("EmailUrl", true)]
-        public string EmailUrl { get; set; }
+        public string Email { get; set; }
 
         [ColumnName("MobileNo", true)]
         [StringValidator(11, 11)]

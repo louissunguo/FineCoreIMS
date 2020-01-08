@@ -35,6 +35,22 @@ DisplayText nvarchar(128) not null,
 LanguageName nvarchar(6) default('zh-cn') not null,
 )
 go
+
+create table UserInf(
+	Id	int	identity(1,1) primary key(Id),
+	Actived bit default(1) not null,
+    /*添加字段*/
+	Code nvarchar(20) constraint pk_User_Code unique(Code) not null,
+    /*特有字段*/
+	UserName nvarchar(50) constraint pk_User_Name unique(UserName) not null,
+	LoginPwd nvarchar(64) not null,
+	EmailUrl nvarchar(64) not null,
+	MobileNo nchar(11)	not null,
+	WechatNo nvarchar(64) not null,
+)
+
+
+go
 /*开始建表（公司信息）*/
 create table CorpInf(
 Id int identity(1,1) primary key(Id),
@@ -42,10 +58,10 @@ Actived bit default(1) not null,
 /*添加字段*/
 Code nvarchar(16) constraint pk_Corp_Code unique(Code) not null,
 /*特有字段*/
-CEOId int not null,
-GMId int not null,
-CFOId int not null,
-CashierId int not null,/*出纳*/
+CEOId   int foreign key(CEOId) references UserInf(Id) not null,
+GMId    int foreign key(GMId) references  UserInf(Id) not null,
+CFOId   int foreign key(CFOId) references UserInf(Id) not null,
+CashierId int foreign key(CashierId) references UserInf(Id) not null,/*出纳*/
 PhoneNo nvarchar(11) null,
 FaxNo nvarchar(11) null,
 PostAddress nvarchar(256) null,
@@ -58,8 +74,8 @@ Actived bit default(1) not null,
 /*添加字段*/
 Code nvarchar(16) constraint pk_Dept_Code unique(Code) not null,
 /*特有字段*/
-DeptManagerId	int not null,
-DeptSecretaryId int		null,
+DeptManagerId int foreign key(DeptManagerId) references UserInf(Id)  not null,
+DeptSecretaryId int	 foreign key(DeptSecretaryId) references UserInf(Id)  null,
 ExtNo nvarchar(4)		null,
 )
 go
@@ -85,19 +101,4 @@ PageUrl nvarchar(256),
 FullClassName nvarchar(256),
 ParentId int foreign key(ParentId) references FuncInf(Id),
 )
-go
-
-create table UserInf(
-	Id	int	identity(1,1) primary key(Id),
-	Actived bit default(1) not null,
-    /*添加字段*/
-	Code nvarchar(20) constraint pk_User_Code unique(Code) not null,
-    /*特有字段*/
-	UserName nvarchar(50) constraint pk_User_Name unique(UserName) not null,
-	LoginPwd nvarchar(64) not null,
-	EmailUrl nvarchar(64) not null,
-	MobileNo nchar(11)	not null,
-	WechatNo nvarchar(64) not null,
-)
-
 

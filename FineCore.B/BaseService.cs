@@ -24,6 +24,7 @@ namespace FineCore.B {
 
 
 
+
             return _UserInf != null && _UserInf.Id > 0;
         }
 

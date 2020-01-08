@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics;
 using FineCore.B.Interfaces;
 using FineCore.WebSite.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace FineCore.WebSite.Controllers {
+    [Authorize]
     public partial class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
         private readonly IGeneralUser user;
@@ -12,7 +14,7 @@ namespace FineCore.WebSite.Controllers {
 
         public IActionResult Index() {
              
-
+            
 
              //_logger.LogWarning($"{dbProvider}");
 
